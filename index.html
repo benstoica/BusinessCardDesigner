@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<title>Business Card Designer</title>
+
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-12">
+				<h1>Business Card Designer</h1>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid">
+		<div class="col-sm-12 col-md-6 background">
+			<form id="cardInfo" class="form-horizontal">
+
+				<div class="form-group">
+					<label for="inputCompany" class="col-sm-3 control-label">Company Name:</label>
+					<div class="col-sm-9">
+						<input type="text" class="form-control" id="inputCompany" onkeyup="printCompany()">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="inputMessage" class="col-sm-3 control-label">Company Message:</label>
+					<div class="col-sm-9">
+						<input type="text" class="form-control" id="inputMessage" onkeyup="printMessage()">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="inputBg" class="col-sm-3 control-label">Background Color:</label>
+					<div class="col-sm-9">
+						<input type="color" class="form-control" id="inputBg" value="#ffb74d" onchange="changeBg()">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="inputText" class="col-sm-3 control-label">Text Color:</label>
+					<div class="col-sm-9">
+						<input type="color" class="form-control" id="inputText" value="#262626" onchange="changeText()">
+					</div>
+				</div>	
+
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Text Align:</label>
+					<div class="col-sm-9">
+						<button class="btn btn-info" id="text-left" onclick="textAlign(this.id)">Left</button>
+						<button class="btn btn-info" id="text-center" onclick="textAlign(this.id)">Center</button>
+						<button class="btn btn-info" id="text-right" onclick="textAlign(this.id)">Right</button>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="inputName" class="col-sm-3 control-label">Your Name:</label>
+					<div class="col-sm-9">
+						<input required type="text" class="form-control" id="inputName" onkeyup="printName()">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="inputJob" class="col-sm-3 control-label">Job Title:</label>
+					<div class="col-sm-9">
+						<input type="text" class="form-control" id="inputJob" onkeyup="printJob()">
+					</div>
+				</div>	
+
+				<div class="form-group">
+					<label for="inputEmail" class="col-sm-3 control-label">Email:</label>
+					<div class="col-sm-9">
+						<input type="email" class="form-control" id="inputEmail" onkeyup="printEmail()">
+					</div>
+				</div>	
+
+				<div class="form-group">
+					<label for="inputTelephone" class="col-sm-3 control-label">Phone #:</label>
+					<div class="col-sm-9">
+						<input type="tel" class="form-control" id="inputTelephone" onkeyup="printTelephone()">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="col-sm-3 col-sm-offset-3">
+						<button onclick="formSubmit()">Submit</button>
+					</div>
+					<div class="col-sm-3">
+						<button onclick="formReset()">Clear</button>
+					</div>					
+				</div>		
+
+			</form>
+		</div>
+
+		<div id="biz" class="col-sm-12 col-md-6">
+			<div id="card">
+				<h3 id="outputCompany">Company Name</h3>
+				<p id="outputMessage" class="small">Company Message</p>
+				<hr>
+				<p id="outputName" class="small">Your Name</p>	
+				<p id="outputJob" class="small">Job Title</p>
+				<p id="outputEmail" class="small">Email:</p>
+				<p id="outputTelephone" class="small">Phone #:</p>							
+			</div>
+		</div>
+
+	</div>
+
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
